@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login | RaceDay</title><link rel="icon" type="image/svg+xml" href="images/logo.svg"><link rel="stylesheet" href="css/site.css"></head>
+<body class="auth-page">
+  <header class="topbar auth-topbar"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a><div class="auth-header-links"><div class="auth-header-links"><a class="back-link" href="index.html">← Back to home</a><a class="back-link" href="/swagger" target="_blank" rel="noopener">Open API ↗</a></div><a class="back-link" href="/swagger" target="_blank" rel="noopener">Open API ↗</a></div></header>
+  <main class="auth-layout">
+    <section class="auth-story">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> WELCOME BACK</span>
+      <h1>Your next finish line <span>is waiting.</span></h1>
+      <p>Sign in to browse events, manage your entries and follow your RaceDay results.</p>
+      <div class="auth-feature-list"><div><span>✓</span> Keep your event details together</div><div><span>✓</span> View your enrolments</div><div><span>✓</span> Follow your race results</div></div>
+      <div class="auth-orbit orbit-a"></div><div class="auth-orbit orbit-b"></div>
+    </section>
+    <section class="auth-card glass-panel">
+      <div class="auth-logo">R</div><span class="eyebrow centered-eyebrow">RACEDAY ACCOUNT</span><h2>Welcome back</h2><p class="auth-subtitle">Enter your details to continue.</p>
+      <form id="loginForm" class="form-stack">
+        <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required maxlength="150">
+        <label for="password">Password</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button type="button" data-password-toggle="password">Show</button></div>
+        <div class="form-line"><span class="small-muted">Secure sign in</span></div>
+        <button class="button button-primary button-wide" type="submit">Sign in <span>→</span></button>
+        <p id="authMessage" class="form-message" role="status"></p>
+      </form>
+      <p class="auth-foot">New to RaceDay? <a href="signup.html">Create an account</a></p>
+    </section>
+  </main>
+  <script src="js/common.js"></script><script src="js/auth.js"></script>
+</body>
+</html>

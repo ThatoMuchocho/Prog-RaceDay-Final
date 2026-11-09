@@ -1,0 +1,21 @@
+/* RaceDay API documentation theme — navy, blue and red glass accents */
+body{background:linear-gradient(135deg,#edf5ff,#dceaff,#f8fbff);background-attachment:fixed}
+.swagger-ui{font-family:"DM Sans","Segoe UI",system-ui,sans-serif;color:#142f4e}
+.swagger-ui .topbar{background:linear-gradient(90deg,#071d3c,#155da5 68%,#e13d4e);padding:10px 0;box-shadow:0 4px 20px #071d3c33}
+.swagger-ui .topbar a{filter:brightness(0) invert(1)}
+.swagger-ui .info{margin:26px 0;padding:24px;border-radius:20px;background:#ffffffb8;border:1px solid #ffffff;box-shadow:0 8px 30px #071d3c16;backdrop-filter:blur(18px)}
+.swagger-ui .info .title,.swagger-ui .opblock-tag,.swagger-ui section.models h4{color:#0b3970;font-family:"Manrope","Segoe UI",sans-serif}
+.swagger-ui .info .title small{background:#155da5;color:#fff;border-radius:7px}.swagger-ui .info a{color:#e13d4e}
+.swagger-ui .scheme-container,.swagger-ui section.models{background:#ffffffa8;border:1px solid #fff;border-radius:16px;box-shadow:0 7px 24px #071d3c13;backdrop-filter:blur(15px)}
+.swagger-ui .btn{border-radius:999px}.swagger-ui .btn.authorize{color:#155da5;border-color:#155da5;background:#ffffffaa}.swagger-ui .btn.authorize svg{fill:#155da5}
+.swagger-ui .btn.execute{background:linear-gradient(100deg,#155da5,#2c87d5 65%,#e13d4e);border:0;color:#fff}
+.swagger-ui .opblock{border-radius:14px;overflow:hidden;box-shadow:0 6px 18px #071d3c10;backdrop-filter:blur(12px)}
+.swagger-ui .opblock .opblock-summary-method{border-radius:999px;min-width:68px}
+.swagger-ui .opblock.opblock-get{background:#e2f1ff;border-color:#2c87d5}.swagger-ui .opblock.opblock-get .opblock-summary-method{background:#2c87d5}.swagger-ui .opblock.opblock-get .opblock-summary{border-color:#2c87d5}
+.swagger-ui .opblock.opblock-post{background:#dcecff;border-color:#155da5}.swagger-ui .opblock.opblock-post .opblock-summary-method{background:#155da5}.swagger-ui .opblock.opblock-post .opblock-summary{border-color:#155da5}
+.swagger-ui .opblock.opblock-put{background:#eaf3ff;border-color:#438dce}.swagger-ui .opblock.opblock-put .opblock-summary-method{background:#438dce}.swagger-ui .opblock.opblock-put .opblock-summary{border-color:#438dce}
+.swagger-ui .opblock.opblock-delete{background:#ffe9ec;border-color:#e13d4e}.swagger-ui .opblock.opblock-delete .opblock-summary-method{background:#e13d4e}.swagger-ui .opblock.opblock-delete .opblock-summary{border-color:#e13d4e}
+.swagger-ui .response-col_status{color:#155da5;font-weight:800}.swagger-ui input[type=text],.swagger-ui textarea,.swagger-ui select{border:1px solid #c9daeb;border-radius:9px;background:#fff}
+.swagger-ui .dialog-ux .modal-ux{border-radius:18px;background:#fffffff0;backdrop-filter:blur(16px)}
+.swagger-ui .opblock,.swagger-ui .scheme-container,.swagger-ui .info,.swagger-ui section.models{transition:all .2s ease}.swagger-ui .opblock:hover{transform:translateY(-1px);box-shadow:0 10px 25px #155da526}
+@media(prefers-reduced-motion:reduce){.swagger-ui *{transition:none!important;transform:none!important}}

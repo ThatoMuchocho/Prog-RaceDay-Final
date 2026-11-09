@@ -1,0 +1,14 @@
+wwwroot\api.html
+wwwroot\css\site.css
+wwwroot\css\swagger-raceday.css
+wwwroot\event.html
+wwwroot\images\logo.svg
+wwwroot\index.html
+wwwroot\js\auth.js
+wwwroot\js\common.js
+wwwroot\js\event.js
+wwwroot\js\home.js
+wwwroot\js\portal.js
+wwwroot\login.html
+wwwroot\portal.html
+wwwroot\signup.html

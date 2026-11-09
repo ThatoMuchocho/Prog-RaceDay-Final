@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RaceDay API | Developer access</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg"><link rel="stylesheet" href="css/site.css">
+</head>
+<body class="home-page">
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a>
+    <nav class="top-links"><a href="index.html">Website</a><a href="portal.html">My RaceDay</a><a class="button button-small" href="/swagger" target="_blank" rel="noopener">Open Swagger API ↗</a></nav>
+  </header>
+  <main class="api-access-page">
+    <section class="api-access-hero glass-panel">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> RACEDAY DEVELOPER ACCESS</span>
+      <h1>Your RaceDay <span>API</span></h1>
+      <p>The RaceDay website connects directly to the ASP.NET Core API running on this same server. Use these shortcuts to open the interactive API, its OpenAPI specification or live event records.</p>
+      <p class="api-base-line"><strong>Current API host:</strong> <code id="apiBaseUrl">Detecting…</code></p>
+      <a class="button button-primary api-main-button" href="/swagger" target="_blank" rel="noopener">Open interactive Swagger API <span>↗</span></a>
+    </section>
+    <section class="api-access-grid">
+      <article class="glass-panel api-access-card"><span class="api-card-symbol">01</span><h2>Swagger documentation</h2><p>Explore endpoints, inspect request fields and test API calls.</p><a href="/swagger" target="_blank" rel="noopener">Open /swagger ↗</a></article>
+      <article class="glass-panel api-access-card"><span class="api-card-symbol">02</span><h2>OpenAPI JSON</h2><p>Open the machine-readable RaceDay v1 API specification.</p><a href="/swagger/v1/swagger.json" target="_blank" rel="noopener">Open API specification ↗</a></article>
+      <article class="glass-panel api-access-card"><span class="api-card-symbol">03</span><h2>Events endpoint</h2><p>View event records currently returned by the live RaceDay API.</p><a href="/api/events" target="_blank" rel="noopener">GET /api/events ↗</a></article>
+    </section>
+    <p class="api-access-note">Run RaceDay.Api in Visual Studio and open the HTTPS address shown by Visual Studio. Do not open an HTML file directly from Windows Explorer. Swagger must be enabled by the API host.</p>
+  </main>
+  <footer class="footer"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a><span>© <span id="year"></span> RaceDay API.</span><a href="/swagger">Open API documentation</a></footer>
+  <script>document.getElementById('apiBaseUrl').textContent=window.location.origin;document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create account | RaceDay</title><link rel="icon" type="image/svg+xml" href="images/logo.svg"><link rel="stylesheet" href="css/site.css"></head>
+<body class="auth-page">
+  <header class="topbar auth-topbar"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a><div class="auth-header-links"><div class="auth-header-links"><a class="back-link" href="index.html">← Back to home</a><a class="back-link" href="/swagger" target="_blank" rel="noopener">Open API ↗</a></div><a class="back-link" href="/swagger" target="_blank" rel="noopener">Open API ↗</a></div></header>
+  <main class="auth-layout signup-layout">
+    <section class="auth-story">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> JOIN THE RACEDAY COMMUNITY</span>
+      <h1>Every journey <span>starts somewhere.</span></h1>
+      <p>Create your participant account and get ready to discover your next running, walking or cycling event.</p>
+      <div class="signup-highlight glass-panel"><div class="highlight-symbol">🏁</div><div><strong>Your next challenge begins here.</strong><small>Register · Explore · Enter · Achieve</small></div></div>
+      <div class="auth-orbit orbit-a"></div><div class="auth-orbit orbit-b"></div>
+    </section>
+    <section class="auth-card glass-panel">
+      <div class="auth-logo">R</div><span class="eyebrow centered-eyebrow">GET STARTED</span><h2>Create your account</h2><p class="auth-subtitle">Fill in the details below to register.</p>
+      <form id="signupForm" class="form-stack">
+        <div class="two-fields"><div><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" required minlength="2" maxlength="50" placeholder="First name"></div><div><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" required minlength="2" maxlength="50" placeholder="Last name"></div></div>
+        <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@example.com">
+        <label for="password">Password</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="100" placeholder="At least 8 characters"><button type="button" data-password-toggle="password">Show</button></div>
+        <label for="confirmPassword">Confirm password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required minlength="8" maxlength="100" placeholder="Enter your password again">
+        <p class="small-muted">Public registration creates a Participant account. Organiser access is assigned by an administrator in the database.</p>
+        <button class="button button-primary button-wide" type="submit">Create account <span>→</span></button>
+        <p id="authMessage" class="form-message" role="status"></p>
+      </form>
+      <p class="auth-foot">Already registered? <a href="login.html">Sign in</a></p>
+    </section>
+  </main>
+  <script src="js/common.js"></script><script src="js/auth.js"></script>
+</body>
+</html>

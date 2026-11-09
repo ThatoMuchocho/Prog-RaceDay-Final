@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RaceDay — discover running, walking and cycling events and manage your entries.">
+  <title>RaceDay | Find your next finish line</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg"><link rel="stylesheet" href="css/site.css">
+</head>
+<body class="home-page">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a>
+    <nav class="top-links"><a href="#events">Events</a><a href="#about">About</a><a class="nav-link" href="api.html">API</a><a id="navPortal" class="nav-link hidden" href="portal.html">My RaceDay</a><a id="navLogin" href="login.html">Login</a><a id="navSignup" class="button button-small" href="signup.html">Create account</a><button id="navLogout" class="text-button hidden" type="button">Logout</button></nav>
+  </header>
+
+  <main>
+    <section class="hero-shell">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> RUN · WALK · CYCLE</span>
+        <h1>Find your pace.<br><span>Own your finish line.</span></h1>
+        <p>Choose a province and activity, compare distances and start times, and discover races, charity events and community campaigns across South Africa.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#events">Explore events <span>↗</span></a><a class="button button-glass" href="signup.html">Join RaceDay</a></div>
+        <div class="hero-stats"><div><strong>01</strong><span>Find an event</span></div><div><strong>02</strong><span>Choose your category</span></div><div><strong>03</strong><span>Reach your finish line</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="RaceDay running illustration">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="race-card glass-panel"><div class="race-card-top"><span class="mini-label">THE NEXT CHALLENGE</span><span class="live-dot"></span></div><div class="race-number">R<span>D</span></div><h2>Your next chapter<br>starts at the start line.</h2><p>Every event is a new opportunity.</p><div class="race-card-line"><span></span></div><small>MAKE EVERY STEP COUNT</small></div>
+        <div class="floating-chip chip-blue">🏃 Move forward</div><div class="floating-chip chip-red">🏁 Finish strong</div>
+      </div>
+    </section>
+
+    <section class="section-wrap" id="events">
+      <div class="section-heading"><div><span class="eyebrow">FIND EVENTS ACROSS SOUTH AFRICA</span><h2>Choose your next activity</h2><p>Select your province, preferred sport, distance and date to discover matching RaceDay listings.</p></div><a class="button button-outline" href="login.html">View your entries</a></div>
+      <form id="eventFilterForm" class="event-filter glass-panel">
+        <div class="filter-grid">
+          <div class="filter-field"><label for="filterProvince">Province</label><select id="filterProvince" name="province"><option value="All">All nine provinces</option><option>Eastern Cape</option><option>Free State</option><option>Gauteng</option><option>KwaZulu-Natal</option><option>Limpopo</option><option>Mpumalanga</option><option>North West</option><option>Northern Cape</option><option>Western Cape</option></select></div>
+          <div class="filter-field"><label for="filterLocation">Town / city</label><input id="filterLocation" name="location" placeholder="e.g. Mbombela, Durban, Cape Town"></div>
+          <div class="filter-field"><label for="filterSport">Sport activity</label><select id="filterSport" name="sportType"><option value="All">Any activity</option><option value="Run">Road running</option><option value="Trail Running">Trail running</option><option value="Walk">Walking</option><option value="Cycle">Road cycling</option><option value="Mountain Biking">Mountain biking</option><option value="Triathlon">Triathlon</option><option value="Swimming">Swimming</option><option value="Multisport">Multisport</option><option value="Community">Community fitness</option></select></div>
+          <div class="filter-field"><label for="filterKind">Event purpose</label><select id="filterKind" name="eventKind"><option value="All">All event types</option><option value="Race">Race / competition</option><option value="Awareness">Awareness campaign</option><option value="Charity">Charity / fundraising</option><option value="Community">Community event</option><option value="Training">Training session</option><option value="Special">Special event</option></select></div>
+          <div class="filter-field"><label for="filterFrom">From date</label><input id="filterFrom" name="dateFrom" type="date"></div>
+          <div class="filter-field"><label for="filterTo">To date</label><input id="filterTo" name="dateTo" type="date"></div>
+          <div class="filter-field"><label for="filterMinDistance">Minimum distance (km)</label><input id="filterMinDistance" name="minDistance" type="number" min="0" step="0.1" placeholder="e.g. 3"></div>
+          <div class="filter-field"><label for="filterMaxDistance">Maximum distance (km)</label><input id="filterMaxDistance" name="maxDistance" type="number" min="0" step="0.1" placeholder="e.g. 21.1"></div>
+        </div>
+        <div class="filter-actions"><button class="button button-primary" type="submit">Search events <span>⌕</span></button><button class="button button-glass" id="clearEventFilters" type="button">Clear filters</button><span class="filter-hint">Times shown are supplied by the event organiser. Choose a time slot when booking if slots are available.</span></div>
+      </form>
+      <div class="results-bar"><strong id="eventResultCount">Loading events…</strong><span>RaceDay organiser listings</span></div>
+      <div id="homeEventGrid" class="event-grid"><div class="loading-card glass-panel">Loading events…</div></div>
+      <p id="homeEventMessage" class="helper-message" role="status"></p>
+    </section>
+
+    <section class="section-wrap external-wrap" id="national-calendars">
+      <div class="section-heading"><div><span class="eyebrow">EXPLORE MORE EVENTS</span><h2>National event calendars</h2><p>RaceDay's own list contains events added by RaceDay organisers. These external calendars help you discover additional events across all provinces.</p></div></div>
+      <div class="directory-grid">
+        <a class="directory-card glass-panel" href="https://runningcalendar.co.za/provinces" target="_blank" rel="noopener"><span class="directory-icon">🏃</span><strong>RunningCalendar</strong><span>Running events by all nine provinces, including Mpumalanga, Gauteng, KwaZulu-Natal and Western Cape.</span><b>Browse provincial races ↗</b></a>
+        <a class="directory-card glass-panel" href="https://raceconnect.co.za/events" target="_blank" rel="noopener"><span class="directory-icon">🌍</span><strong>RaceConnect</strong><span>Multi-activity event listings with province, date, distance and activity filters.</span><b>Browse events ↗</b></a>
+        <a class="directory-card glass-panel" href="https://www.cyclingsa-events.co.za/events" target="_blank" rel="noopener"><span class="directory-icon">🚴</span><strong>Cycling South Africa</strong><span>Federation event finder for cycling races and provincial events.</span><b>Find cycling events ↗</b></a>
+        <a class="directory-card glass-panel" href="https://mpumalangacycling.org/calendar" target="_blank" rel="noopener"><span class="directory-icon">⛰️</span><strong>Mpumalanga Cycling Union</strong><span>Provincial cycling calendar, including road, cross-country, enduro and gravel events.</span><b>View Mpumalanga calendar ↗</b></a>
+      </div>
+      <p class="directory-note">External listings are managed by their respective organisers and calendars. Their registration, schedule and availability are not controlled by RaceDay.</p>
+    </section>
+
+    <section class="section-wrap special-wrap" id="special-events">
+      <div class="section-heading"><div><span class="eyebrow">MOVE FOR A MEANINGFUL CAUSE</span><h2>Special events & awareness campaigns</h2><p>RaceDay supports charity, awareness and community event types, not only competitive races.</p></div></div>
+      <div class="special-grid">
+        <article class="special-card glass-panel"><span class="special-label">GBV AWARENESS · DURBAN</span><h3>Walk For Them 2026</h3><p>28 November 2026 · Sunkist Lawns, Durban Promenade, KwaZulu-Natal</p><div class="special-facts"><b>4 km walk</b><b>8 km run</b><b>Start 06:00</b></div><a class="button button-primary" href="https://www.walk4them.co.za/" target="_blank" rel="noopener">Official event information ↗</a></article>
+        <article class="special-card glass-panel"><span class="special-label">GBV AWARENESS · GQEBERHA</span><h3>Walk For Them 2026</h3><p>12 December 2026 · Hobie Beach, Gqeberha, Eastern Cape</p><div class="special-facts"><b>4 km walk</b><b>8 km run</b><b>Start 07:00</b></div><a class="button button-primary" href="https://www.walk4them.co.za/" target="_blank" rel="noopener">Official event information ↗</a></article>
+      </div>
+      <div class="special-themes"><span>Other supported special-event themes</span><b>Charity & fundraising</b><b>Cancer awareness</b><b>Environmental clean-ups</b><b>Family fun runs</b><b>Youth sports days</b><b>Community wellness</b></div>
+      <p class="directory-note">These two GBV-awareness event details are shown from the organiser's public website. Registration is external; RaceDay does not reserve places for these events. The additional themes are event types organisers can create in RaceDay; they are not all scheduled public events.</p>
+    </section>
+
+    <section class="benefits-wrap" id="about">
+      <div class="section-heading centered"><div><span class="eyebrow">ONE PLACE FOR YOUR RACE JOURNEY</span><h2>From sign-up to results</h2><p>RaceDay connects participants and organisers through one event platform.</p></div></div>
+      <div class="benefit-grid">
+        <article class="benefit-card glass-panel"><div class="benefit-icon blue-icon">◎</div><h3>Explore events</h3><p>Find road running, walking and cycling events with key event information.</p></article>
+        <article class="benefit-card glass-panel"><div class="benefit-icon red-icon">＋</div><h3>Enter with ease</h3><p>Choose an event category and submit your entry online.</p></article>
+        <article class="benefit-card glass-panel"><div class="benefit-icon navy-icon">↗</div><h3>Track your results</h3><p>View your enrolments and recorded race results from your account.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RaceDay</span></a><span>© <span id="year"></span> RaceDay. Built for every starting line.</span><a href="/swagger">API documentation</a></footer>
+  <script src="js/common.js"></script><script src="js/home.js"></script>
+</body>
+</html>

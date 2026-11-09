@@ -1,0 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+namespace RaceDay.Api.DTOs;
+public record RegisterRequest([Required, StringLength(50,MinimumLength=2)] string FirstName,[Required,StringLength(50,MinimumLength=2)] string LastName,[Required,EmailAddress,StringLength(150)] string Email,[Required,MinLength(8),StringLength(100)] string Password);
+public record LoginRequest([Required,EmailAddress] string Email,[Required] string Password);
+public record EventRequest([Required,StringLength(150)] string EventName,[StringLength(1000)] string? Description,DateOnly EventDate,[Required,StringLength(200)] string Location,[Required,StringLength(40)] string Province,[Required,StringLength(30)] string SportType,[Required,StringLength(40)] string EventKind,[Url,StringLength(500)] string? ExternalUrl,[Range(typeof(decimal),"0.01","100000")] decimal DistanceKm,TimeOnly? StartTime,TimeOnly? EndTime,[Required] string Status);
+public record CategoryRequest([Required,StringLength(100)] string CategoryName,[Required] string CategoryType,[StringLength(500)] string? Description,bool IsActive=true);
+public record EventCategoryRequest([Range(1,int.MaxValue)] int CategoryID,[Range(typeof(decimal),"0","1000000")] decimal EntryFee,[Range(1,1000000)] int MaxParticipants,[Range(typeof(decimal),"0.01","100000")] decimal? DistanceKm);
+public record EnrolmentRequest([Range(1,int.MaxValue)] int EventCategoryID,int? TimeSlotID);
+public record EventTimeSlotRequest(TimeOnly StartTime,TimeOnly? EndTime,[Range(1,1000000)] int MaxParticipants=100);
+public record ResultRequest([Range(1,int.MaxValue)] int EnrolmentID,[Range(1,int.MaxValue)] int? Position,TimeOnly? FinishTime,TimeOnly? ChipTime,[Range(typeof(decimal),"0.01","1000")] decimal? Pace,bool IsOfficial=true);
+public record RouteRequest([Required,StringLength(150)] string RouteName,[Url,StringLength(500)] string? RouteUrl,[StringLength(1000)] string? RouteDescription);
+public record AuthResponse(int UserID,string FirstName,string LastName,string Email,string Role,string Token);
